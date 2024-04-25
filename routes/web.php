@@ -19,3 +19,12 @@ Route::get('/', function () {
 
 
 Route::resource('customers', App\Http\Controllers\customersController::class);
+
+
+Route::resource('movies', App\Http\Controllers\moviesController::class);
+
+
+Route::resource('screenings', App\Http\Controllers\screeningsController::class);
+
+
+Route::resource('tickets', App\Http\Controllers\ticketsController::class);
