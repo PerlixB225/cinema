@@ -3,9 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\screenings;
+use App\Models\members;
 
-class UpdatescreeningsRequest extends FormRequest
+class UpdatemembersRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class UpdatescreeningsRequest extends FormRequest
      */
     public function rules()
     {
-        $rules = screenings::$rules;
+        $rules = members::$rules;
         
         return $rules;
     }

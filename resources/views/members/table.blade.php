@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table" id="customers-table">
+    <table class="table" id="members-table">
         <thead>
         <tr>
             <th>Firstname</th>
@@ -10,20 +10,20 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($customers as $customers)
+        @foreach($members as $members)
             <tr>
-                <td>{{ $customers->Firstname }}</td>
-            <td>{{ $customers->Surname }}</td>
-            <td>{{ $customers->Phone }}</td>
-            <td>{{ $customers->Age }}</td>
+                <td>{{ $members->Firstname }}</td>
+            <td>{{ $members->Surname }}</td>
+            <td>{{ $members->Phone }}</td>
+            <td>{{ $members->Age }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['customers.destroy', $customers->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['members.destroy', $members->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('customers.show', [$customers->id]) }}"
+                        <a href="{{ route('members.show', [$members->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('customers.edit', [$customers->id]) }}"
+                        <a href="{{ route('members.edit', [$members->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>

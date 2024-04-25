@@ -2,16 +2,16 @@
 
 namespace App\Repositories;
 
-use App\Models\customers;
+use App\Models\members;
 use App\Repositories\BaseRepository;
 
 /**
- * Class customersRepository
+ * Class membersRepository
  * @package App\Repositories
- * @version April 25, 2024, 2:50 pm UTC
+ * @version April 25, 2024, 5:29 pm UTC
 */
 
-class customersRepository extends BaseRepository
+class membersRepository extends BaseRepository
 {
     /**
      * @var array
@@ -38,6 +38,6 @@ class customersRepository extends BaseRepository
      **/
     public function model()
     {
-        return customers::class;
+        return members::class;
     }
 }

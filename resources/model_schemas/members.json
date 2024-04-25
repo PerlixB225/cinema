@@ -61,6 +61,6 @@
     },
     {
         "type": "relation",
-        "relation": "1tm,Ticket,CustomerID"
+        "relation": "1tm,Ticket,MemberID"
     }
 ]

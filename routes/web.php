@@ -18,13 +18,7 @@ Route::get('/', function () {
 });
 
 
-Route::resource('customers', App\Http\Controllers\customersController::class);
+Route::resource('members', App\Http\Controllers\membersController::class);
 
-
-Route::resource('movies', App\Http\Controllers\moviesController::class);
-
-
-Route::resource('screenings', App\Http\Controllers\screeningsController::class);
-
-
-Route::resource('tickets', App\Http\Controllers\ticketsController::class);
+Route::get('/customers/new', 'App\Http\Controllers\CustomerController@new');
+Route::post('/customers/create', 'App\Http\Controllers\CustomerController@create')->name('customers.create');

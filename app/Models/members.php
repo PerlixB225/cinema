@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model as Model;
 
 
 /**
- * Class customers
+ * Class members
  * @package App\Models
- * @version April 25, 2024, 2:50 pm UTC
+ * @version April 25, 2024, 5:29 pm UTC
  *
  * @property \Illuminate\Database\Eloquent\Collection $tickets
  * @property string $Firstname
@@ -17,11 +17,11 @@ use Illuminate\Database\Eloquent\Model as Model;
  * @property string $Phone
  * @property integer $Age
  */
-class customers extends Model
+class members extends Model
 {
 
 
-    public $table = 'customers';
+    public $table = 'members';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
@@ -66,6 +66,6 @@ class customers extends Model
      **/
     public function tickets()
     {
-        return $this->hasMany(\App\Models\Ticket::class, 'CustomerID');
+        return $this->hasMany(\App\Models\Ticket::class, 'MemberID');
     }
 }
