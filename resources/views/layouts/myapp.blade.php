@@ -17,10 +17,12 @@
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container-fluid">
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="{{ route('members.index')}}">Members List</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{ route('movies.index')}}">Movies List</a></li>
-			  <li class="nav-item"><a class="nav-link" href="{{ route('screenings.index')}}">Screenings List</a></li>
-			  <li class="nav-item"><a class="nav-link" href="{{ route('tickets.index')}}">Tickets List</a></li>
+              <li class="nav-item">
+                <a class="nav-link" href=https://laravel.com/docs>Laravel Documentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href=https://laracasts.com/>Laravel Video Tutorials</a>
+              </li>
             </ul>
           </div>
         </nav>
