@@ -1,0 +1,76 @@
+drop database if exists cinema;
+create database cinema;
+use cinema;
+
+CREATE TABLE customers (
+    id integer PRIMARY key auto_increment,
+    Firstname varchar(30),
+    Surname varchar(30),
+    Phone varchar(15),
+    Age integer
+);
+
+
+
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Title TEXT,
+    Genre TEXT,
+    ReleaseDate DATE,
+    Duration TEXT
+);
+
+
+
+
+CREATE TABLE screenings (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    ScreenNumber TEXT
+);
+
+
+
+
+CREATE TABLE tickets (
+    id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    MovieID INTEGER,
+    CustomerID INTEGER,
+    ScreeningID INTEGER,
+    SeatNumber TEXT,
+    PurchaseDate DATE,
+    FOREIGN KEY(MovieID) REFERENCES movies(id),
+    FOREIGN KEY(CustomerID) REFERENCES customers(id),
+    FOREIGN KEY(ScreeningID) REFERENCES screenings(id)
+);
+
+insert into customers
+(Firstname, Surname, Phone, Age) VALUES
+('Joe', 'Bloggs', '0831185849', 21),
+('Dave', 'Murphy', '0894482739', 19),
+('Mickey', 'Rooney', '089446251', 20),
+('Lional', 'Messi', '08422746', 23);
+
+
+INSERT INTO movies
+(Title, Genre, ReleaseDate, Duration) VALUES
+('Hunger Games', 'Action', '2001-03-02', '1 Hour'),
+('Avengers', 'Action', '2005-06-02', '1 Hour'),
+('Toy Story', 'Comedy', '2003-01-03', '2 Hour'),
+('Fast and Furious', 'Action', '2010-01-03', '2 Hour');
+
+
+INSERT INTO screenings
+(ScreenNumber) VALUES
+('2'),
+('3'),
+('4'),
+('1');
+
+
+INSERT INTO tickets
+(MovieID, CustomerID, ScreeningID, SeatNumber, PurchaseDate) VALUES
+(1, 1, 1, 'A1', '2024-04-10'),
+(2, 2, 2, 'B3', '2024-04-10'),
+(3, 3, 3, 'C2', '2024-04-10'),
+(4, 4, 4, 'D4', '2024-04-10');
