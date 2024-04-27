@@ -7,8 +7,9 @@
 <!-- Genre Field -->
 <div class="form-group col-sm-12 col-lg-12">
     {!! Form::label('Genre', 'Genre:') !!}
-    {!! Form::textarea('Genre', null, ['class' => 'form-control']) !!}
+    {!! Form::select('Genre', ['Action' => 'Action', 'Adventure' => 'Adventure', 'Comedy' => 'Comedy', 'Drama' => 'Drama', 'Horror' => 'Horror', 'Science Fiction' => 'Science Fiction'], null, ['class' => 'form-control']) !!}
 </div>
+
 
 <!-- Releasedate Field -->
 <div class="form-group col-sm-6">

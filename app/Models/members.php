@@ -68,4 +68,9 @@ class members extends Model
     {
         return $this->hasMany(\App\Models\Ticket::class, 'MemberID');
     }
+	
+	public function __toString()
+	{
+	return "hello";
+	}
 }

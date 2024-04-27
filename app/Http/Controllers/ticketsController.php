@@ -9,6 +9,9 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Members as Members;
+use App\Models\Screenings as Screenings;
+
 
 class ticketsController extends AppBaseController
 {
@@ -19,6 +22,9 @@ class ticketsController extends AppBaseController
     {
         $this->ticketsRepository = $ticketsRepo;
     }
+	
+	
+	
 
     /**
      * Display a listing of the tickets.
@@ -42,8 +48,14 @@ class ticketsController extends AppBaseController
      */
     public function create()
     {
-        return view('tickets.create');
-    }
+        //Find all members from the DB and return as an array of Member.php objects
+		 $members = Members::all();
+		 //Find all courts from the DB and return as an array of Court.php objects
+		 $screenings = screenings::all();
+		 //return the bookings.create view with $members and $courts as view variables
+		 return view('tickets.create')->with('members',$screenings)->with('screenings',$screenings);
+}
+    
 
     /**
      * Store a newly created tickets in storage.
