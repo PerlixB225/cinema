@@ -9,10 +9,11 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Members;
 
 class membersController extends AppBaseController
 {
-    /** @var membersRepository $membersRepository*/
+    /** @var membersRepository $membersRepository */
     private $membersRepository;
 
     public function __construct(membersRepository $membersRepo)
@@ -24,7 +25,6 @@ class membersController extends AppBaseController
      * Display a listing of the members.
      *
      * @param Request $request
-     *
      * @return Response
      */
     public function index(Request $request)
@@ -36,7 +36,7 @@ class membersController extends AppBaseController
     }
 
     /**
-     * Show the form for creating a new members.
+     * Show the form for creating a new member.
      *
      * @return Response
      */
@@ -46,13 +46,22 @@ class membersController extends AppBaseController
     }
 
     /**
-     * Store a newly created members in storage.
-     *
-     * @param CreatemembersRequest $request
+     * Show the form for creating a new member.
      *
      * @return Response
      */
-    public function store(CreatemembersRequest $request)
+    public function new()
+    {
+        return view('members.new');
+    }
+
+    /**
+     * Store a newly created member in storage.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
     {
         $input = $request->all();
 
@@ -64,10 +73,9 @@ class membersController extends AppBaseController
     }
 
     /**
-     * Display the specified members.
+     * Display the specified member.
      *
      * @param int $id
-     *
      * @return Response
      */
     public function show($id)
@@ -76,7 +84,6 @@ class membersController extends AppBaseController
 
         if (empty($members)) {
             Flash::error('Members not found');
-
             return redirect(route('members.index'));
         }
 
@@ -84,10 +91,9 @@ class membersController extends AppBaseController
     }
 
     /**
-     * Show the form for editing the specified members.
+     * Show the form for editing the specified member.
      *
      * @param int $id
-     *
      * @return Response
      */
     public function edit($id)
@@ -96,7 +102,6 @@ class membersController extends AppBaseController
 
         if (empty($members)) {
             Flash::error('Members not found');
-
             return redirect(route('members.index'));
         }
 
@@ -104,37 +109,31 @@ class membersController extends AppBaseController
     }
 
     /**
-     * Update the specified members in storage.
+     * Update the specified member in storage.
      *
      * @param int $id
-     * @param UpdatemembersRequest $request
-     *
+     * @param Request $request
      * @return Response
      */
-    public function update($id, UpdatemembersRequest $request)
+    public function update($id, Request $request)
     {
         $members = $this->membersRepository->find($id);
 
         if (empty($members)) {
             Flash::error('Members not found');
-
             return redirect(route('members.index'));
         }
 
         $members = $this->membersRepository->update($request->all(), $id);
 
         Flash::success('Members updated successfully.');
-
         return redirect(route('members.index'));
     }
 
     /**
-     * Remove the specified members from storage.
+     * Remove the specified member from storage.
      *
      * @param int $id
-     *
-     * @throws \Exception
-     *
      * @return Response
      */
     public function destroy($id)
@@ -143,14 +142,12 @@ class membersController extends AppBaseController
 
         if (empty($members)) {
             Flash::error('Members not found');
-
             return redirect(route('members.index'));
         }
 
         $this->membersRepository->delete($id);
 
         Flash::success('Members deleted successfully.');
-
         return redirect(route('members.index'));
     }
 }

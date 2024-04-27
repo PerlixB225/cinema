@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MovieController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,3 +32,14 @@ Route::resource('screenings', App\Http\Controllers\screeningsController::class);
 
 
 Route::resource('tickets', App\Http\Controllers\ticketsController::class);
+
+Route::get('/members/new', 'App\Http\Controllers\MembersController@new');
+Route::post('/members/create', 'App\Http\Controllers\MembersController@create')->name('members.create');
+
+
+
+Route::get('/movies/new', 'MovieController@new');
+Route::post('/movies/create', 'MovieController@create')->name('movies.create');
+
+Route::get('/calendar/display','App\Http\Controllers\CalendarController@display')->name('calendar.display');
+
