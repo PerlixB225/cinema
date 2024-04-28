@@ -33,25 +33,23 @@
         @foreach($members as $member)
             <option value="{{$member->id}}">{{$member}}</option>
         @endforeach
-
     </select>
 </div>
 
 <!-- Movie Id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('movie_id', 'Movie Id:') !!}
-     <select name="movieid" class="form-control">
+    <select name="movieid" class="form-control">
         @foreach($movies as $movie)
             <option value="{{$movie->id}}">{{$movie}}</option>
         @endforeach
-
     </select>
 </div>
 
 <!-- Seat Number Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('seat_number', 'Seat Number:') !!}
-    {!! Form::text('seat_number', null, ['class' => 'form-control','maxlength' => 10,'maxlength' => 10]) !!}
+    {!! Form::select('seat_number', ['A1'=>'A1', 'A2'=>'A2', 'A3'=>'A3', 'A4'=>'A4', 'B1'=>'B1', 'B2'=>'B2', 'B3'=>'B3', 'B4'=>'B4', 'C1'=>'C1', 'C2'=>'C2', 'C3'=>'C3', 'C4'=>'C4'], null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Ticket Price Field -->
@@ -59,4 +57,3 @@
     {!! Form::label('ticket_price', 'Ticket Price:') !!}
     {!! Form::number('ticket_price', null, ['class' => 'form-control']) !!}
 </div>
-

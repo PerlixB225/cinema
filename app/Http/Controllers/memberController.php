@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use \App\Models\Member as Member; 
 
 class memberController extends AppBaseController
 {
