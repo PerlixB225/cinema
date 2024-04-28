@@ -1,0 +1,10 @@
+DROP VIEW IF EXISTS event;
+CREATE VIEW event AS
+SELECT CONCAT(member.firstname, ' ', member.surname) AS title,
+       CONCAT(booking.booking_date, 'T', booking.start_time) AS start,
+       CONCAT(booking.booking_date, 'T', booking.end_time) AS end,
+       CONCAT('Movie: ', movie.title) AS venue,
+       booking.id AS id
+FROM booking
+JOIN member ON booking.member_id = member.id
+JOIN movie ON booking.movie_id = movie.id;
