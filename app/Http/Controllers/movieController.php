@@ -153,4 +153,7 @@ class movieController extends AppBaseController
 
         return redirect(route('movies.index'));
     }
+	
+	
+	
 }

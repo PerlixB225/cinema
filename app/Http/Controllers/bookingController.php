@@ -99,17 +99,18 @@ class bookingController extends AppBaseController
      * @return Response
      */
     public function edit($id)
-    {
-        $booking = $this->bookingRepository->find($id);
+{
+    $booking = $this->bookingRepository->find($id);
+    $members = Member::all(); // Retrieve members
+    $movies = Movie::all(); // Retrieve movies
 
-        if (empty($booking)) {
-            Flash::error('Booking not found');
-
-            return redirect(route('bookings.index'));
-        }
-
-        return view('bookings.edit')->with('booking', $booking);
+    if (empty($booking)) {
+        Flash::error('Booking not found');
+        return redirect(route('bookings.index'));
     }
+
+    return view('bookings.edit')->with('booking', $booking)->with('members', $members)->with('movies', $movies);
+}
 
     /**
      * Update the specified booking in storage.
@@ -161,4 +162,7 @@ class bookingController extends AppBaseController
 
         return redirect(route('bookings.index'));
     }
+	
+	
+	
 }
