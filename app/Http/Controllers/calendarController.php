@@ -9,7 +9,6 @@ class CalendarController extends Controller
         return view('calendar.display');
     }
 	
-	
 	public function json()
 	{
     //$this->view->disable();

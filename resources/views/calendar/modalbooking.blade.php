@@ -21,8 +21,8 @@
 <label for="endtime">Start Time</label>
 <input type="text" class="form-control" id="endtime" name="endtime"/> </div>
 <div class="form-group">
-<label for="movieid">movieID</label>
-<input type="text" class="form-control" id="movieid" name="movieid"/> </div>
+<label for="courtid">CourtID</label>
+<input type="text" class="form-control" id="courtid" name="courtid"/> </div>
 <div class="modal-footer">
 <button type="submit" id="submitButton" class="btn btn-default" data-dismiss="modal">Create Appointment</button>
 </div>

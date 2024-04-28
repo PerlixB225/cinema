@@ -36,9 +36,10 @@ Route::resource('movies', App\Http\Controllers\movieController::class);
 Route::get('/members/new', 'App\Http\Controllers\MemberController@new');
 Route::post('/members/create', 'App\Http\Controllers\MemberController@create')->name('members.create');
 
-Route::get('/calendar/display', 'App\Http\Controllers\CalendarController@display');
+Route::get('/calendar/display', 'App\Http\Controllers\CalendarController@display')->name('calendar.display');
 
-Route::get('/calendar', 'CalendarController@getEvents')->name('calendar.json');
+Route::get('/calendar/json', 'App\Http\Controllers\CalendarController@json')->name('calendar.json');
+
 
 
 
