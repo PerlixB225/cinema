@@ -77,4 +77,10 @@ class movie extends Model
     {
         return $this->hasMany(\App\Models\Movierating::class, 'movieid');
     }
+	
+	
+	public function __toString()
+    {
+        return  $this->title;
+    }
 }
