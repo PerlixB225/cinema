@@ -10,6 +10,8 @@
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         .navbar {
             background-color: grey;
@@ -28,9 +30,6 @@
             color: black; /* Set the text color to black */
         }
     </style>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <!-- Bootstrap 5 Navbar -->
@@ -41,7 +40,6 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('members.index') }}">Member List</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('movies.index') }}">Movies List</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('bookings.index') }}">Booking List</a></li>
-			
         </ul>
     </div>
 </nav>
@@ -51,14 +49,18 @@
             <!-- Well for left side of the page (to compensate for widescreen) -->
             <div class="col-lg-2"></div>
             <!-- Slot for content from Lower Level views with sections called 'content' pulled in here -->
-            <div class="col-lg-8"> @yield('content') </div>
+            <div class="col-lg-8">
+                @yield('content')
+            </div>
             <!-- Well for right side of the page (to compensate for widescreen) -->
             <div class="col-lg-2"></div>
         </div>
     </div>
 </div>
-<!-- Webpack mix npm generated -->
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+<!-- Bootstrap 5 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+<!-- Custom JavaScript -->
 <script src="{{ asset('js/app.js') }}"></script>
 @stack('js_scripts')
 </body>
