@@ -16,8 +16,6 @@
 		"infyomlabs/adminlte-templates": "^3.0",
 		"doctrine/dbal": "~2.3",
 		"eoinok/basic-template": "dev-main"
-		
-		
     },
     "require-dev": {
         "facade/ignition": "^2.5",

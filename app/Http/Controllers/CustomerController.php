@@ -16,13 +16,11 @@ class CustomerController extends Controller
 		$customer->save();//persists the Customer object to the database
     }
 	
-	
 	public function edit($id)
     {
          $customer = Customer::find($id);
          return view('customers.edit')->with('customer', $customer);
     }
-	
 	
 	public function update(Request $request)
     {

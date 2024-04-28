@@ -1,24 +1,24 @@
 <!-- Title Field -->
 <div class="col-sm-12">
-    {!! Form::label('Title', 'Title:') !!}
-    <p>{{ $movies->Title }}</p>
+    {!! Form::label('title', 'Title:') !!}
+    <p>{{ $movie->title }}</p>
 </div>
 
-<!-- Genre Field -->
+<!-- Director Field -->
 <div class="col-sm-12">
-    {!! Form::label('Genre', 'Genre:') !!}
-    <p>{{ $movies->Genre }}</p>
+    {!! Form::label('director', 'Director:') !!}
+    <p>{{ $movie->director }}</p>
 </div>
 
-<!-- Releasedate Field -->
+<!-- Release Date Field -->
 <div class="col-sm-12">
-    {!! Form::label('ReleaseDate', 'Releasedate:') !!}
-    <p>{{ $movies->ReleaseDate }}</p>
+    {!! Form::label('release_date', 'Release Date:') !!}
+    <p>{{ $movie->release_date }}</p>
 </div>
 
-<!-- Duration Field -->
+<!-- Duration Minutes Field -->
 <div class="col-sm-12">
-    {!! Form::label('Duration', 'Duration:') !!}
-    <p>{{ $movies->Duration }}</p>
+    {!! Form::label('duration_minutes', 'Duration Minutes:') !!}
+    <p>{{ $movie->duration_minutes }}</p>
 </div>
 

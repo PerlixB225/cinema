@@ -14,31 +14,36 @@
     </head>
     <body>
         <!-- Bootstrap 5 Navbar -->
-        <nav class="navbar navbar-expand-sm bg-info navbar-light">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <div class="container-fluid">
-            <!-- Cinema heading -->
-            <h1 class="navbar-brand">Cinema</h1>
             <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link" href="{{ route('members.index')}}">Members List</a></li>
-              <li class="nav-item"><a class="nav-link" href="{{ route('movies.index')}}">Movies List</a></li>
-			  <li class="nav-item"><a class="nav-link" href="{{ route('screenings.index')}}">Screenings List</a></li>
-			  <li class="nav-item"><a class="nav-link" href="{{ route('tickets.index')}}">Tickets List</a></li>
+			
+			
+              <li class="nav-item"><a class="nav-link" href="{{route('members.index')}}">Member List</a></li>
+			  <li class="nav-item"><a class="nav-link" href="{{route('members.create')}}">Create New Member</a></li>
+			  <li class="nav-item"><a class="nav-link" href="{{route('bookings.index')}}">Booking List</a></li>
+              
+				
+				
+				
+				
+              </li>
             </ul>
           </div>
         </nav>
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                  
+                    <!-- Well for left side of the page (to compensate for widescreen) -->
                     <div class="col-lg-2"></div>
-                   
+                    <!-- Slot for content from Lower Level views with sections called 'content' pulled in here -->
                     <div class="col-lg-8"> @yield('content') </div>
-                  
+                    <!-- Well for right side of the page (to compensate for widescreen) -->
                     <div class="col-lg-2"></div>
                 </div>
             </div>
         </div>
-        
+        <!-- Webpack mix npm generated -->
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <script src="{{asset('js/app.js')}}"></script>
         @stack('js_scripts')

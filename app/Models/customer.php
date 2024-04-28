@@ -13,7 +13,5 @@ class customer extends Model
     {
         $this->attributes['surname']=$sn;
     }
-	
-	
 }
 ?>

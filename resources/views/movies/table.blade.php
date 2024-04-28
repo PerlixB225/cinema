@@ -3,27 +3,27 @@
         <thead>
         <tr>
             <th>Title</th>
-        <th>Genre</th>
-        <th>Releasedate</th>
-        <th>Duration</th>
+        <th>Director</th>
+        <th>Release Date</th>
+        <th>Duration Minutes</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($movies as $movies)
+        @foreach($movies as $movie)
             <tr>
-                <td>{{ $movies->Title }}</td>
-            <td>{{ $movies->Genre }}</td>
-            <td>{{ $movies->ReleaseDate }}</td>
-            <td>{{ $movies->Duration }}</td>
+                <td>{{ $movie->title }}</td>
+            <td>{{ $movie->director }}</td>
+            <td>{{ $movie->release_date }}</td>
+            <td>{{ $movie->duration_minutes }}</td>
                 <td width="120">
-                    {!! Form::open(['route' => ['movies.destroy', $movies->id], 'method' => 'delete']) !!}
+                    {!! Form::open(['route' => ['movies.destroy', $movie->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>
-                        <a href="{{ route('movies.show', [$movies->id]) }}"
+                        <a href="{{ route('movies.show', [$movie->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-eye"></i>
                         </a>
-                        <a href="{{ route('movies.edit', [$movies->id]) }}"
+                        <a href="{{ route('movies.edit', [$movie->id]) }}"
                            class='btn btn-default btn-xs'>
                             <i class="far fa-edit"></i>
                         </a>

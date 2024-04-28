@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Edit Movies</h1>
+                    <h1>Edit Movie</h1>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
 
         <div class="card">
 
-            {!! Form::model($movies, ['route' => ['movies.update', $movies->id], 'method' => 'patch']) !!}
+            {!! Form::model($movie, ['route' => ['movies.update', $movie->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
                 <div class="row">

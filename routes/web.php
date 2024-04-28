@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MovieController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,28 +18,15 @@ Route::get('/', function () {
 });
 
 
-Route::resource('members', App\Http\Controllers\membersController::class);
+Route::resource('members', App\Http\Controllers\memberController::class);
 
 Route::get('/customers/new', 'App\Http\Controllers\CustomerController@new');
 Route::post('/customers/create', 'App\Http\Controllers\CustomerController@create')->name('customers.create');
 Route::get('/customers/edit/{id}', 'App\Http\Controllers\CustomerController@edit');
 Route::post('/customers/update', 'App\Http\Controllers\CustomerController@update');
 
-Route::resource('movies', App\Http\Controllers\moviesController::class);
+
+Route::resource('bookings', App\Http\Controllers\bookingController::class);
 
 
-Route::resource('screenings', App\Http\Controllers\screeningsController::class);
-
-
-Route::resource('tickets', App\Http\Controllers\ticketsController::class);
-
-Route::get('/members/new', 'App\Http\Controllers\MembersController@new');
-Route::post('/members/create', 'App\Http\Controllers\MembersController@create')->name('members.create');
-
-
-
-Route::get('/movies/new', 'MovieController@new');
-Route::post('/movies/create', 'MovieController@create')->name('movies.create');
-
-Route::get('/calendar/display','App\Http\Controllers\CalendarController@display')->name('calendar.display');
-
+Route::resource('movies', App\Http\Controllers\movieController::class);

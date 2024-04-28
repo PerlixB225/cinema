@@ -1,25 +1,24 @@
 <!-- Title Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('Title', 'Title:') !!}
-    {!! Form::textarea('Title', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Genre Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('Genre', 'Genre:') !!}
-    {!! Form::select('Genre', ['Action' => 'Action', 'Adventure' => 'Adventure', 'Comedy' => 'Comedy', 'Drama' => 'Drama', 'Horror' => 'Horror', 'Science Fiction' => 'Science Fiction'], null, ['class' => 'form-control']) !!}
-</div>
-
-
-<!-- Releasedate Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ReleaseDate', 'Releasedate:') !!}
-    {!! Form::text('ReleaseDate', null, ['class' => 'form-control','id'=>'ReleaseDate']) !!}
+    {!! Form::label('title', 'Title:') !!}
+    {!! Form::text('title', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100]) !!}
+</div>
+
+<!-- Director Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('director', 'Director:') !!}
+    {!! Form::text('director', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100]) !!}
+</div>
+
+<!-- Release Date Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('release_date', 'Release Date:') !!}
+    {!! Form::text('release_date', null, ['class' => 'form-control','id'=>'release_date']) !!}
 </div>
 
 @push('page_scripts')
     <script type="text/javascript">
-        $('#ReleaseDate').datetimepicker({
+        $('#release_date').datetimepicker({
             format: 'YYYY-MM-DD HH:mm:ss',
             useCurrent: true,
             sideBySide: true
@@ -27,8 +26,8 @@
     </script>
 @endpush
 
-<!-- Duration Field -->
-<div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('Duration', 'Duration:') !!}
-    {!! Form::textarea('Duration', null, ['class' => 'form-control']) !!}
+<!-- Duration Minutes Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('duration_minutes', 'Duration Minutes:') !!}
+    {!! Form::number('duration_minutes', null, ['class' => 'form-control']) !!}
 </div>
