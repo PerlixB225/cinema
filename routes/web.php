@@ -37,4 +37,5 @@ Route::post('/members/create', 'App\Http\Controllers\MemberController@create')->
 
 Route::get('/calendar/display', 'App\Http\Controllers\CalendarController@display');
 
-Route::get('/calendar/json','App\Http\Controllers\CalendarController@json')->name('calendar.json');
+Route::get('/calendar', 'CalendarController@getEvents')->name('calendar.json');
+
