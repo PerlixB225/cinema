@@ -2,25 +2,24 @@
 
 namespace App\Repositories;
 
-use App\Models\movie;
+use App\Models\movierating;
 use App\Repositories\BaseRepository;
 
 /**
- * Class movieRepository
+ * Class movieratingRepository
  * @package App\Repositories
  * @version April 28, 2024, 9:04 pm UTC
 */
 
-class movieRepository extends BaseRepository
+class movieratingRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
-        'title',
-        'director',
-        'release_date',
-        'duration_minutes'
+        'rating',
+        'comment',
+        'movieid'
     ];
 
     /**
@@ -38,6 +37,6 @@ class movieRepository extends BaseRepository
      **/
     public function model()
     {
-        return movie::class;
+        return movierating::class;
     }
 }

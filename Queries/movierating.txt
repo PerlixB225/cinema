@@ -1,0 +1,12 @@
+drop table if exists movieRating;
+create table movieRating (
+   id int auto_increment,
+   rating int,
+   comment text,
+   created_at datetime,
+   updated_at datetime,
+   deleted_at datetime,
+   movieid int,
+   primary key(id),
+   foreign key(movieid) references movie(id)
+);

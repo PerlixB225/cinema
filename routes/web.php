@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\moveratingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,10 @@ Route::post('/members/create', 'App\Http\Controllers\MemberController@create')->
 Route::get('/calendar/display', 'App\Http\Controllers\CalendarController@display');
 
 Route::get('/calendar', 'CalendarController@getEvents')->name('calendar.json');
+
+
+
+Route::resource('movieratings', App\Http\Controllers\movieratingController::class);
+
+Route::get('/movieratings/ratemovie/{movie}', 'App\Http\Controllers\movieratingController@ratemovie')->name('movieratings.ratemovie');
 
