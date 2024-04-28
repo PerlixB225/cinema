@@ -59,3 +59,4 @@
     {!! Form::label('ticket_price', 'Ticket Price:') !!}
     {!! Form::number('ticket_price', null, ['class' => 'form-control']) !!}
 </div>
+

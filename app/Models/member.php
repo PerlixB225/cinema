@@ -4,30 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
 
-
-
-/**
- * Class member
- * @package App\Models
- * @version April 27, 2024, 11:19 pm UTC
- *
- * @property \Illuminate\Database\Eloquent\Collection $bookings
- * @property string $firstname
- * @property string $surname
- * @property string $email
- * @property string $phone
- */
-class member extends Model
+class Member extends Model
 {
-
-
     public $table = 'member';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
-
 
     public $fillable = [
         'firstname',
@@ -68,10 +50,12 @@ class member extends Model
     {
         return $this->hasMany(\App\Models\Booking::class, 'member_id');
     }
-	
-	
-	public function __toString()
-	{
-	return  $this->firstname . " " . $this->surname;
-	}
+
+    // Add this line to disable timestamps
+    public $timestamps = false;
+
+    public function __toString()
+    {
+        return  $this->firstname . " " . $this->surname;
+    }
 }

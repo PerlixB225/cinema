@@ -4,30 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
 
-
-
-/**
- * Class movie
- * @package App\Models
- * @version April 28, 2024, 3:37 pm UTC
- *
- * @property \Illuminate\Database\Eloquent\Collection $bookings
- * @property string $title
- * @property string $director
- * @property string $release_date
- * @property integer $duration_minutes
- */
-class movie extends Model
+class Movie extends Model
 {
-
-
     public $table = 'movie';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
-
 
     public $fillable = [
         'title',
@@ -68,11 +50,12 @@ class movie extends Model
     {
         return $this->hasMany(\App\Models\Booking::class, 'movie_id');
     }
-	
-	
-	public function __toString()
-	{
-	return  $this->title;
-	}
-	
+
+    // Add this line to disable timestamps
+    public $timestamps = false;
+
+    public function __toString()
+    {
+        return  $this->title;
+    }
 }

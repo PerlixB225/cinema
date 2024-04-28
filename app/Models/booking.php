@@ -4,34 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
 
-
-
-/**
- * Class booking
- * @package App\Models
- * @version April 28, 2024, 3:37 pm UTC
- *
- * @property \App\Models\Member $member
- * @property \App\Models\Movie $movie
- * @property string $booking_date
- * @property time $start_time
- * @property time $end_time
- * @property integer $member_id
- * @property integer $movie_id
- * @property string $seat_number
- * @property number $ticket_price
- */
-class booking extends Model
+class Booking extends Model
 {
-
-
     public $table = 'booking';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
-
 
     public $fillable = [
         'booking_date',
@@ -87,4 +65,16 @@ class booking extends Model
     {
         return $this->belongsTo(\App\Models\Movie::class, 'movie_id');
     }
+
+    // Add this line to disable timestamps
+    public $timestamps = false;
+	
+	public function create()
+{
+    $members = Member::all(); // Assuming you have a Member model
+
+    // Other logic...
+
+    return view('your_view_name', compact('members'));
+}
 }
