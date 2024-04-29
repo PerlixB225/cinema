@@ -40,6 +40,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('members.index') }}">Member List</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('movies.index') }}">Movies List</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('bookings.index') }}">Booking List</a></li>
+            <li class="nav-item"><a class="nav-link" href="http://localhost:8000/calendar/display">Calendar List</a></li>
         </ul>
     </div>
 </nav>
