@@ -4,31 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model as Model;
 
-
-
-/**
- * Class movie
- * @package App\Models
- * @version April 28, 2024, 9:04 pm UTC
- *
- * @property \Illuminate\Database\Eloquent\Collection $bookings
- * @property \Illuminate\Database\Eloquent\Collection $movieratings
- * @property string $title
- * @property string $director
- * @property string $release_date
- * @property integer $duration_minutes
- */
-class movie extends Model
+class Movie extends Model
 {
-
-
     public $table = 'movie';
     
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
-
-
-
 
     public $fillable = [
         'title',
@@ -77,10 +58,12 @@ class movie extends Model
     {
         return $this->hasMany(\App\Models\Movierating::class, 'movieid');
     }
+    
+    
+    public function __toString()
+{
+    return $this->title ?? ''; 
+}
+
 	
-	
-	public function __toString()
-    {
-        return  $this->title;
-    }
 }
